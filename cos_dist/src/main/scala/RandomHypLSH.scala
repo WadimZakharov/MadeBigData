@@ -28,8 +28,7 @@ class CosLSH(override val uid: String) extends LSH[CosLSHModel] with HasSeed {
   
   
   def setSeed(value: Long): this.type = set(seed, value)
-
-//rename val
+  
   override protected[ml] def createRawLSHModel(inputDim: Int): CosLSHModel = {
     val rand = new Random(0)
     val randHyperPlanes: Array[Vector] = {
